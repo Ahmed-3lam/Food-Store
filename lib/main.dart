@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:job_test1/Screens/LoginScreen/LoginView.dart';
 import 'package:job_test1/Screens/MainScreen/MainScreen.dart';
+import 'package:job_test1/Screens/OnBoardingScreen/view.dart';
 
 
 void main() {
@@ -19,7 +21,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainScreen(),
+      home: LoginScreen(),
 
     );
   }

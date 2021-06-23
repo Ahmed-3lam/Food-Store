@@ -5,10 +5,10 @@ class DioHelper {
 
  static Dio dio =Dio(
      BaseOptions(
-       baseUrl: "https://student.valuxapps.com/api/",
+       baseUrl: "http://rowadtqnee.online/calc/public/api/v1/",
        receiveDataWhenStatusError: true,
        headers: {
-         "Content-Type": "application/json",
+
        }
      ));
 
@@ -39,7 +39,6 @@ class DioHelper {
  {
    return dio.post(
      url,
-
      data: data,
    );
  }
