@@ -2,6 +2,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:job_test1/Screens/HomeScreen/HomeModel.dart';
+import 'package:job_test1/Screens/HomeScreen/new_model.dart';
 
 
 Widget foodContainer1({
@@ -31,10 +33,10 @@ Widget foodContainer1({
 
 //image Slider
     Widget imageSlider ({
-  String image1="cover.jpg",
-  String image2="Food-Android-Wallpaper.jpg",
-  String image3="food2.jpg",
-
+  // HomeModel? newModel,
+      String image1="cover.jpg",
+      String image2="Food-Android-Wallpaper.jpg",
+      String image3="food2.jpg",
 })
 {
   return
@@ -45,27 +47,36 @@ Widget foodContainer1({
   ClipRRect(
   borderRadius: BorderRadius.circular(10),
   child: CarouselSlider(
-  items: [
+  // items:  newModel?.data?.banners?.map((e) => Image(
+  //   image: NetworkImage('${e.image}'),
+  //   width: double.infinity,
+  //   fit: BoxFit.cover,
+  //
+  // ),).toList()
+items: [
+
 
   Image(
   image: AssetImage("assets/$image1"),
-  width: double.infinity,
-  fit: BoxFit.cover
-  ,
+    width: double.infinity,
+    fit: BoxFit.cover
+    ,
   ),
-  Image(
-  image: AssetImage("assets/$image2"),
-  width: double.infinity,
-  fit: BoxFit.cover
-  ,
-  ),
-  Image(
-  image: AssetImage("assets/$image3"),
-  width: double.infinity,
-fit: BoxFit.cover
+    Image(
+      image: AssetImage("assets/$image2"),
+      width: double.infinity,
+      fit: BoxFit.cover
+      ,
+    ),
+    Image(
+      image: AssetImage("assets/$image3"),
+      width: double.infinity,
+      fit: BoxFit.cover
+    )
+]
+
+
 ,
-),
-],
 options: CarouselOptions(
 viewportFraction: 1,
 height: 250,
