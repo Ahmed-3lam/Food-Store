@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
+import 'package:job_test1/Components/SharedPreference/UserToken.dart';
 import 'package:job_test1/Screens/LoginScreen/cubic/cubic.dart';
 import 'package:job_test1/Screens/MainScreen/MainScreen.dart';
 
@@ -22,10 +23,13 @@ class LoginScreen extends StatelessWidget {
         listener: (context , state ){
           if (state is ShopLoginSuccessState){
             if(state.loginModel.status==200){
+              Get.offAll(MainScreen());
+              headersMap();
+
 
               Fluttertoast.showToast(
                   msg: "Success Login",
-                  toastLength: Toast.LENGTH_LONG,
+                  toastLength: Toast.LENGTH_SHORT,
                   gravity: ToastGravity.BOTTOM,
                   timeInSecForIosWeb: 15,
                   backgroundColor: Colors.grey,

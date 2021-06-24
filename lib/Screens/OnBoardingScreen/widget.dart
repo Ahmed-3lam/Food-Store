@@ -12,7 +12,6 @@ Widget buildBoardingItem(BoardingModel model) => Column(
     Expanded(
       child: Image(
         image: AssetImage('${model.image}'),
-
         width: double.infinity,
       ),
     ),

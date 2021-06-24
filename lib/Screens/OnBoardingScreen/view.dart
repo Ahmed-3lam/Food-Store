@@ -1,6 +1,12 @@
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'package:job_test1/Screens/LoginScreen/LoginView.dart';
 import 'package:job_test1/Screens/OnBoardingScreen/widget.dart';
+
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import 'model.dart';
@@ -16,6 +22,22 @@ class OnBoardingScreen extends StatefulWidget {
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   bool isLast = false;
+
+
+
+  // Future<void> submit() async {
+  //   SharedPreferences preferences = await SharedPreferences.getInstance();
+  //
+  //
+  //   await preferences.setInt('initScreen', 1).then((value) {
+  //
+  //       Get.offAll(LoginScreen());
+  //
+  //   }
+  // );
+  //
+  //
+  // }
   var boardController = PageController();
   @override
   Widget build(BuildContext context) {
@@ -27,7 +49,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         actions: [
           TextButton(
               onPressed: (){
-                print("Go to login");
+
+
+                Get.offAll(LoginScreen());
               },
               child: Text(
                   "Skip"
@@ -81,8 +105,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   onPressed: () {
                     if (isLast)
                     {
-                      print("Go to Login");
-                    } else {
+                      Get.offAll(LoginScreen());                   } else {
                       boardController.nextPage(
                         duration: Duration(
                           milliseconds: 750,
