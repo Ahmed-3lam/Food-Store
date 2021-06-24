@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:job_test1/Screens/LoginScreen/LoginView.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class ProfileScreen extends StatefulWidget {
@@ -122,6 +126,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
 
                         ),
+                        TextButton(onPressed: () async{
+                          SharedPreferences cashHelper = await SharedPreferences.getInstance();
+                          if(cashHelper.getString("token") !=null){
+                            CircularProgressIndicator();
+                            cashHelper.remove("token").then((value) {
+                              Get.offAll(LoginScreen());
+
+                            }) ;
+                        }
+
+                          }, child: Text("SignOut")),
 
                       ],
                     ),
